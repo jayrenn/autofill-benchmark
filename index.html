@@ -28,6 +28,7 @@
         background: #fff;
         border-bottom: 1px solid #ccc;
         margin: 40px 10px;
+        padding: 0 20px 15px 20px;
       }
 
       legend {
@@ -39,19 +40,24 @@
         font-size: 22px;
       }
 
+      .field {
+        margin: 5px 0;
+      }
+
       label {
         display: inline-block;
         width: 120px;
       }
 
-      input {
-        padding: 5px;
+      input,
+      select {
+        padding: 10px;
         border: 0;
-        color: #3498db !important;
-        background: #fff !important;
+        background: #ecf0f1;
         text-transform: uppercase;
         font-family: Segoe UI Semibold, Helvetica, sans-serif;
         font-weight: 900;
+        box-sizing: content-box;
       }
     </style>
   </head>
@@ -62,7 +68,7 @@
         <legend>Baseline for contact information</legend>
         <div class="field">
           <label for="firstName">First name</label>
-          <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Click here" />
+          <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Double click here" />
         </div>
         <div class="field">
           <label for="middleName">Middle name</label>
@@ -169,7 +175,7 @@
         <legend>Baseline for payment information</legend>
         <div class="field">
           <label for="cardType">Card type</label>
-          <input type="text" id="cardType" name="cardType" maxlength="30" />
+          <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
         </div>
         <div class="field">
           <label for="cardNumber">Card number</label>
