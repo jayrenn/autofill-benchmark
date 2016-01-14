@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  background: #eee;
+  font-family: Segoe UI, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  font-family: Segoe UI Light, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 36px;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+fieldset {
+  border: 0;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  margin: 40px 10px;
+  padding: 40px 20px 15px 20px;
+  width: 444px;
+}
+
+legend {
+  width: 100%;
+  position: relative;
+  top: 22px;
+  left: -2px;
+  font-family: Segoe UI Light, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.field {
+  margin: 5px 0;
+}
+
+.field label {
+  display: inline-block;
+  width: 120px;
+}
+
+.field input[type=text],
+.field select {
+  padding: 10px;
+  border: 0;
+  background: #ecf0f1;
+  text-transform: uppercase;
+  font-family: Segoe UI Semibold, Helvetica, sans-serif;
+  font-weight: 500;
+  box-sizing: content-box;
+  outline: none;
+  width: 300px;
+}
+
+#permutations .field:not(.placeholder) {
+  /*
+  width: 0;
+  height: 0;
+  margin: 0 0 0 -1000px;
+  */
+}

@@ -5,75 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Autofill Benchmark</title>
     <meta name="viewport" content="width=device-width">
-    <style type="text/css">
-      body {
-        margin: 0;
-        background: #eee;
-        font-family: Segoe UI, Helvetica, sans-serif;
-        font-size: 14px;
-      }
-
-      h1 {
-        margin: 0;
-        padding: 15px 20px;
-        background: #fff;
-        border-bottom: 1px solid #ccc;
-        font-family: Segoe UI Light, Helvetica, sans-serif;
-        font-weight: 100;
-        font-size: 36px;
-      }
-
-      .column {
-        display: inline-block;
-        vertical-align: top;
-      }
-
-      fieldset {
-        border: 0;
-        background: #fff;
-        border-bottom: 1px solid #ccc;
-        margin: 40px 10px;
-        padding: 40px 20px 15px 20px;
-        width: 444px;
-      }
-
-      legend {
-        width: 100%;
-        position: relative;
-        top: 22px;
-        left: -2px;
-        font-family: Segoe UI Light, Helvetica, sans-serif;
-        font-size: 22px;
-      }
-
-      .field {
-        margin: 5px 0;
-      }
-
-      .field label {
-        display: inline-block;
-        width: 120px;
-      }
-
-      .field input[type=text],
-      .field select {
-        padding: 10px;
-        border: 0;
-        background: #ecf0f1;
-        text-transform: uppercase;
-        font-family: Segoe UI Semibold, Helvetica, sans-serif;
-        font-weight: 500;
-        box-sizing: content-box;
-        outline: none;
-        width: 300px;
-      }
-
-      #permutations .field:not(.placeholder) {
-        width: 0;
-        height: 0;
-        margin: 0 0 0 -1000px;
-      }
-    </style>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <h1>Autofill benchmark</h1>
@@ -189,12 +122,12 @@
         <fieldset id="baselinePayment">
           <legend>Baseline for payment information</legend>
           <div class="field">
-            <label for="cardType">Card type</label>
-            <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" placeholder="Double click here" />
           </div>
           <div class="field">
-            <label for="cardNumber">Card number</label>
-            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
+            <label for="cardType">Card type</label>
+            <input type="text" id="cardType" name="cardType" maxlength="30" />
           </div>
           <div class="field">
             <label for="expMonth">Expiration month</label>
@@ -209,21 +142,22 @@
       <div class="column">
         <fieldset id="permutations">
           <legend>Permutations</legend>
+
+          <!-- Contact fields -->
+
           <div class="field placeholder">
-            <label for="cardType">Card type</label>
-            <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
+            <label for="first-name">Contact fields</label>
+            <input type="text" id="first-name" name="first-name" maxlength="30" placeholder="Double click here" />
           </div>
-          <div class="field">
-            <label for="cardNumber">Card number</label>
-            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
-          </div>
-          <div class="field">
-            <label for="expMonth">Expiration month</label>
-            <input type="text" id="expMonth" name="expMonth" maxlength="2" />
-          </div>
-          <div class="field">
-            <label for="expYear">Expiration year</label>
-            <input type="text" id="expYear" name="expYear" maxlength="4" />
+
+          <!-- First name permutations -->
+          <div id="firstNamePermutations"></div>
+
+          <!-- Payment fields -->
+
+          <div class="field placeholder">
+            <label for="card-number">Payment fields</label>
+            <input type="text" id="card-number" name="card-number" maxlength="20" placeholder="Double click here" />
           </div>
         </fieldset>
       </div>
