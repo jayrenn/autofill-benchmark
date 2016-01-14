@@ -62,6 +62,10 @@
         outline: none;
         width: 300px;
       }
+
+      #toggle:checked + .field {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -69,6 +73,9 @@
     <form id="benchmark">
       <fieldset id="baselineContact">
         <legend>Baseline for contact information</legend>
+        <div class="toggleSetting">
+          <input type="checkbox" id="toggle" checked="checked" /> Hide fields
+        </div>
         <div class="field">
           <label for="firstName">First name</label>
           <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Double click here" />
@@ -176,6 +183,9 @@
       </fieldset>
       <fieldset id="baselinePayment">
         <legend>Baseline for payment information</legend>
+        <div class="toggleSetting">
+          <input type="checkbox" id="toggle" checked="checked" /> Hide fields
+        </div>
         <div class="field">
           <label for="cardType">Card type</label>
           <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
