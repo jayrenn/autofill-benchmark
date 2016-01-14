@@ -6,8 +6,28 @@
     <title>Autofill Benchmark</title>
     <meta name="viewport" content="width=device-width">
     <style type="text/css">
+      body {
+        background: #ecf0f1;
+        font-family: Segoe UI, Helvetica, sans-serif;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-family: Segoe UI Light, Helvetica, sans-serif;
+        font-weight: 100;
+        font-size: 36px;
+      }
+
       fieldset {
-        display: inline-block;
+        border: 0;
+        background: #fff;
+        border-bottom: 1px solid #ccc;
+        margin: 10px;
+      }
+
+      legend {
+        width: 100%;
+        border-bottom: 1px solid #000;
       }
     </style>
   </head>
@@ -17,40 +37,28 @@
       <fieldset id="baselineContact">
         <legend>Baseline for contact information</legend>
         <div class="field">
-          <label for="username">Username</label>
-          <input type="text" name="username" />
-        </div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input type="password" name="password" />
-        </div>
-        <div class="field">
           <label for="firstName">First name</label>
-          <input type="text" name="firstName" />
-        </div>
-        <div class="field">
-          <label for="nameFirst">First name (duplicate)</label>
-          <input type="text" name="nameFirst" />
+          <input type="text" name="firstName" maxlength="20" />
         </div>
         <div class="field">
           <label for="middleName">Middle name</label>
-          <input type="text" name="middleName" />
+          <input type="text" name="middleName" maxlength="20" />
         </div>
         <div class="field">
           <label for="lastName">Last name</label>
-          <input type="text" name="lastName" />
+          <input type="text" name="lastName" maxlength="30" />
         </div>
         <div class="field">
           <label for="addressLine1">Address line 1</label>
-          <input type="text" name="addressLine1" />
+          <input type="text" name="addressLine1" maxlength="35" />
         </div>
         <div class="field">
           <label for="addressLine2">Address line 2</label>
-          <input type="text" name="addressLine2" />
+          <input type="text" name="addressLine2" maxlength="35" />
         </div>
         <div class="field">
           <label for="city">City</label>
-          <input type="text" name="city" />
+          <input type="text" name="city" maxlength="25" />
         </div>
         <div class="field">
           <label for="state">State</label>
@@ -129,27 +137,27 @@
           <input type="text" name="phone" maxlength="14" />
         </div>
         <div class="field">
-          <label for="phoneNumber">Phone number 2</label>
-          <input type="text" name="phoneNumber" maxlength="14" />
+          <label for="email">Email</label>
+          <input type="text" name="email" maxlength="75" />
         </div>
       </fieldset>
       <fieldset id="baselinePayment">
         <legend>Baseline for payment information</legend>
         <div class="field">
           <label for="cardType">Card type</label>
-          <input type="text" name="cardType" />
+          <input type="text" name="cardType" maxlength="30" />
         </div>
         <div class="field">
           <label for="cardNumber">Card number</label>
-          <input type="text" name="cardNumber" />
+          <input type="text" name="cardNumber" maxlength="20" />
         </div>
         <div class="field">
           <label for="expMonth">Expiration month</label>
-          <input type="text" name="expMonth" />
+          <input type="text" name="expMonth" maxlength="2" />
         </div>
         <div class="field">
           <label for="expYear">Expiration year</label>
-          <input type="text" name="expYear" />
+          <input type="text" name="expYear" maxlength="4" />
         </div>
       </fieldset>
     </form>
