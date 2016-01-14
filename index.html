@@ -6,16 +6,16 @@
     <title>Autofill Benchmark</title>
     <meta name="viewport" content="width=device-width">
     <style type="text/css">
-      .field {
-        
+      fieldset {
+        display: inline-block;
       }
     </style>
   </head>
   <body>
     <h1>Autofill benchmark</h1>
     <form id="benchmark">
-      <fieldset id="baseline">
-        <legend>Baseline</legend>
+      <fieldset id="baselineContact">
+        <legend>Baseline for contact information</legend>
         <div class="field">
           <label for="username">Username</label>
           <input type="text" name="username" />
@@ -25,24 +25,24 @@
           <input type="password" name="password" />
         </div>
         <div class="field">
-          <label for="firstname">First name</label>
-          <input type="text" name="firstname" />
+          <label for="firstName">First name</label>
+          <input type="text" name="firstName" />
         </div>
         <div class="field">
-          <label for="middlename">Middle name</label>
-          <input type="text" name="middlename" />
+          <label for="middleName">Middle name</label>
+          <input type="text" name="middleName" />
         </div>
         <div class="field">
-          <label for="lastname">Last name</label>
-          <input type="text" name="lastname" />
+          <label for="lastName">Last name</label>
+          <input type="text" name="lastName" />
         </div>
         <div class="field">
-          <label for="addressline1">Address line 1</label>
-          <input type="text" name="addressline1" />
+          <label for="addressLine1">Address line 1</label>
+          <input type="text" name="addressLine1" />
         </div>
         <div class="field">
-          <label for="addressline2">Address line 2</label>
-          <input type="text" name="addressline2" />
+          <label for="addressLine2">Address line 2</label>
+          <input type="text" name="addressLine2" />
         </div>
         <div class="field">
           <label for="city">City</label>
@@ -117,13 +117,33 @@
           </select>
         </div>
         <div class="field">
-          <label for="zipcode">Zip code</label>
-          <input type="text" name="zipcode" maxlength="5" />
+          <label for="zipCode">Zip code</label>
+          <input type="text" name="zipCode" maxlength="5" />
         </div>
         <div class="field">
           <label for="phone">Phone number</label>
           <input type="text" name="phone" maxlength="14" />
         </div>
+      </fieldset>
+      <fieldset id="baselinePayment">
+        <legend>Baseline for payment information</legend>
+        <div class="field">
+          <label for="cardType">Card type</label>
+          <input type="text" name="cardType" />
+        </div>
+        <div class="field">
+          <label for="cardNumber">Card number</label>
+          <input type="text" name="cardNumber" />
+        </div>
+        <div class="field">
+          <label for="expMonth">Expiration month</label>
+          <input type="text" name="expMonth" />
+        </div>
+        <div class="field">
+          <label for="expYear">Expiration year</label>
+          <input type="text" name="expYear" />
+        </div>
+      </fieldset>
     </form>
   </body>
 </html>
