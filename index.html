@@ -14,6 +14,8 @@
       }
 
       h1 {
+        margin: 0;
+        padding: 15px 20px;
         background: #fff;
         border-bottom: 1px solid #ccc;
         font-family: Segoe UI Light, Helvetica, sans-serif;
@@ -30,8 +32,10 @@
 
       legend {
         width: 100%;
-        top: -14px;
+        top: -22px;
         left: -2px;
+        font-family: Segoe UI Light, Helvetica, sans-serif;
+        font-size: 22px;
       }
     </style>
   </head>
@@ -42,31 +46,31 @@
         <legend>Baseline for contact information</legend>
         <div class="field">
           <label for="firstName">First name</label>
-          <input type="text" name="firstName" maxlength="20" />
+          <input type="text" id="firstName" name="firstName" maxlength="20" />
         </div>
         <div class="field">
           <label for="middleName">Middle name</label>
-          <input type="text" name="middleName" maxlength="20" />
+          <input type="text" id="middleName" name="middleName" maxlength="20" />
         </div>
         <div class="field">
           <label for="lastName">Last name</label>
-          <input type="text" name="lastName" maxlength="30" />
+          <input type="text" id="lastName" name="lastName" maxlength="30" />
         </div>
         <div class="field">
           <label for="addressLine1">Address line 1</label>
-          <input type="text" name="addressLine1" maxlength="35" />
+          <input type="text" id="addressLine1" name="addressLine1" maxlength="35" />
         </div>
         <div class="field">
           <label for="addressLine2">Address line 2</label>
-          <input type="text" name="addressLine2" maxlength="35" />
+          <input type="text" id="addressLine2" name="addressLine2" maxlength="35" />
         </div>
         <div class="field">
           <label for="city">City</label>
-          <input type="text" name="city" maxlength="25" />
+          <input type="text" id="city" name="city" maxlength="25" />
         </div>
         <div class="field">
           <label for="state">State</label>
-          <select name="state">
+          <select id="state" name="state">
             <option value="-1">Select</option>
             <option value="AL">AL</option>
             <option value="AK">AK</option>
@@ -134,34 +138,34 @@
         </div>
         <div class="field">
           <label for="zipCode">Zip code</label>
-          <input type="text" name="zipCode" maxlength="5" />
+          <input type="text" id="zipCode" name="zipCode" maxlength="5" />
         </div>
         <div class="field">
           <label for="phone">Phone number</label>
-          <input type="text" name="phone" maxlength="14" />
+          <input type="text" id="phone" name="phone" maxlength="14" />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="text" name="email" maxlength="75" />
+          <input type="text" id="email" name="email" maxlength="75" />
         </div>
       </fieldset>
       <fieldset id="baselinePayment">
         <legend>Baseline for payment information</legend>
         <div class="field">
           <label for="cardType">Card type</label>
-          <input type="text" name="cardType" maxlength="30" />
+          <input type="text" id="cardType" name="cardType" maxlength="30" />
         </div>
         <div class="field">
           <label for="cardNumber">Card number</label>
-          <input type="text" name="cardNumber" maxlength="20" />
+          <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
         </div>
         <div class="field">
           <label for="expMonth">Expiration month</label>
-          <input type="text" name="expMonth" maxlength="2" />
+          <input type="text" id="expMonth" name="expMonth" maxlength="2" />
         </div>
         <div class="field">
           <label for="expYear">Expiration year</label>
-          <input type="text" name="expYear" maxlength="4" />
+          <input type="text" id="expYear" name="expYear" maxlength="4" />
         </div>
       </fieldset>
     </form>
