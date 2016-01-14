@@ -23,19 +23,24 @@
         font-size: 36px;
       }
 
+      .column {
+        display: inline-block;
+        vertical-align: top;
+      }
+
       fieldset {
         border: 0;
         background: #fff;
         border-bottom: 1px solid #ccc;
         margin: 40px 10px;
-        padding: 0 20px 15px 20px;
+        padding: 40px 20px 15px 20px;
         width: 444px;
       }
 
       legend {
         width: 100%;
         position: relative;
-        top: -22px;
+        top: 22px;
         left: -2px;
         font-family: Segoe UI Light, Helvetica, sans-serif;
         font-size: 22px;
@@ -45,25 +50,25 @@
         margin: 5px 0;
       }
 
-      label {
+      .field label {
         display: inline-block;
         width: 120px;
       }
 
-      input,
-      select {
+      .field input[type=text],
+      .field select {
         padding: 10px;
         border: 0;
         background: #ecf0f1;
         text-transform: uppercase;
         font-family: Segoe UI Semibold, Helvetica, sans-serif;
-        font-weight: 900;
+        font-weight: 500;
         box-sizing: content-box;
         outline: none;
         width: 300px;
       }
 
-      #toggle:checked + .field {
+      #permutations .field:not(.placeholder) {
         display: none;
       }
     </style>
@@ -71,138 +76,155 @@
   <body>
     <h1>Autofill benchmark</h1>
     <form id="benchmark">
-      <fieldset id="baselineContact">
-        <legend>Baseline for contact information</legend>
-        <div class="toggleSetting">
-          <input type="checkbox" id="toggle" checked="checked" /> Hide fields
-        </div>
-        <div class="field">
-          <label for="firstName">First name</label>
-          <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Double click here" />
-        </div>
-        <div class="field">
-          <label for="middleName">Middle name</label>
-          <input type="text" id="middleName" name="middleName" maxlength="20" />
-        </div>
-        <div class="field">
-          <label for="lastName">Last name</label>
-          <input type="text" id="lastName" name="lastName" maxlength="30" />
-        </div>
-        <div class="field">
-          <label for="addressLine1">Address line 1</label>
-          <input type="text" id="addressLine1" name="addressLine1" maxlength="35" />
-        </div>
-        <div class="field">
-          <label for="addressLine2">Address line 2</label>
-          <input type="text" id="addressLine2" name="addressLine2" maxlength="35" />
-        </div>
-        <div class="field">
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" maxlength="25" />
-        </div>
-        <div class="field">
-          <label for="state">State</label>
-          <select id="state" name="state">
-            <option value="-1">Select</option>
-            <option value="AL">AL</option>
-            <option value="AK">AK</option>
-            <option value="AS">AS</option>
-            <option value="AZ">AZ</option>
-            <option value="AR">AR</option>
-            <option value="AA">AA</option>
-            <option value="AE">AE</option>
-            <option value="AP">AP</option>
-            <option value="CA">CA</option>
-            <option value="CO">CO</option>
-            <option value="CT">CT</option>
-            <option value="DE">DE</option>
-            <option value="DC">DC</option>
-            <option value="FM">FM</option>
-            <option value="FL">FL</option>
-            <option value="GA">GA</option>
-            <option value="GU">GU</option>
-            <option value="HI">HI</option>
-            <option value="ID">ID</option>
-            <option value="IL">IL</option>
-            <option value="IN">IN</option>
-            <option value="IA">IA</option>
-            <option value="KS">KS</option>
-            <option value="KY">KY</option>
-            <option value="LA">LA</option>
-            <option value="ME">ME</option>
-            <option value="MH">MH</option>
-            <option value="MD">MD</option>
-            <option value="MA">MA</option>
-            <option value="MI">MI</option>
-            <option value="MN">MN</option>
-            <option value="MS">MS</option>
-            <option value="MO">MO</option>
-            <option value="MT">MT</option>
-            <option value="NE">NE</option>
-            <option value="NV">NV</option>
-            <option value="NH">NH</option>
-            <option value="NJ">NJ</option>
-            <option value="NM">NM</option>
-            <option value="NY">NY</option>
-            <option value="NC">NC</option>
-            <option value="ND">ND</option>
-            <option value="MP">MP</option>
-            <option value="OH">OH</option>
-            <option value="OK">OK</option>
-            <option value="OR">OR</option>
-            <option value="PW">PW</option>
-            <option value="PA">PA</option>
-            <option value="PR">PR</option>
-            <option value="RI">RI</option>
-            <option value="SC">SC</option>
-            <option value="SD">SD</option>
-            <option value="TN">TN</option>
-            <option value="TX">TX</option>
-            <option value="VI">VI</option>
-            <option value="UT">UT</option>
-            <option value="VT">VT</option>
-            <option value="VA">VA</option>
-            <option value="WA">WA</option>
-            <option value="WV">WV</option>
-            <option value="WI">WI</option>
-            <option value="WY">WY</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="zipCode">Zip code</label>
-          <input type="text" id="zipCode" name="zipCode" maxlength="5" />
-        </div>
-        <div class="field">
-          <label for="phone">Phone number</label>
-          <input type="text" id="phone" name="phone" maxlength="14" />
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="text" id="email" name="email" maxlength="75" />
-        </div>
-      </fieldset>
-      <fieldset id="baselinePayment">
-        <legend>Baseline for payment information</legend>
-        <div class="toggleSetting">
-          <input type="checkbox" id="toggle" checked="checked" /> Hide fields
-        </div>
-        <div class="field">
-          <label for="cardType">Card type</label>
-          <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
-        </div>
-        <div class="field">
-          <label for="cardNumber">Card number</label>
-          <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
-        </div>
-        <div class="field">
-          <label for="expMonth">Expiration month</label>
-          <input type="text" id="expMonth" name="expMonth" maxlength="2" />
-        </div>
-        <div class="field">
-          <label for="expYear">Expiration year</label>
-          <input type="text" id="expYear" name="expYear" maxlength="4" />
-        </div>
-      </fieldset>
+      <div class="column">
+        <fieldset id="baselineContact">
+          <legend>Baseline for contact information</legend>
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Double click here" />
+          </div>
+          <div class="field">
+            <label for="middleName">Middle name</label>
+            <input type="text" id="middleName" name="middleName" maxlength="20" />
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" maxlength="30" />
+          </div>
+          <div class="field">
+            <label for="addressLine1">Address line 1</label>
+            <input type="text" id="addressLine1" name="addressLine1" maxlength="35" />
+          </div>
+          <div class="field">
+            <label for="addressLine2">Address line 2</label>
+            <input type="text" id="addressLine2" name="addressLine2" maxlength="35" />
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" maxlength="25" />
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <select id="state" name="state">
+              <option value="-1">Select</option>
+              <option value="AL">AL</option>
+              <option value="AK">AK</option>
+              <option value="AS">AS</option>
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="AA">AA</option>
+              <option value="AE">AE</option>
+              <option value="AP">AP</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FM">FM</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="GU">GU</option>
+              <option value="HI">HI</option>
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MH">MH</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY">NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="MP">MP</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PW">PW</option>
+              <option value="PA">PA</option>
+              <option value="PR">PR</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="VI">VI</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="zipCode">Zip code</label>
+            <input type="text" id="zipCode" name="zipCode" maxlength="5" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="text" id="phone" name="phone" maxlength="14" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" maxlength="75" />
+          </div>
+        </fieldset>
+        <fieldset id="baselinePayment">
+          <legend>Baseline for payment information</legend>
+          <div class="field">
+            <label for="cardType">Card type</label>
+            <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
+          </div>
+          <div class="field">
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
+          </div>
+          <div class="field">
+            <label for="expMonth">Expiration month</label>
+            <input type="text" id="expMonth" name="expMonth" maxlength="2" />
+          </div>
+          <div class="field">
+            <label for="expYear">Expiration year</label>
+            <input type="text" id="expYear" name="expYear" maxlength="4" />
+          </div>
+        </fieldset>
+      </div>
+      <div class="column">
+        <fieldset id="permutations">
+          <legend>Permutations</legend>
+          <div class="field placeholder">
+            <label for="cardType">Card type</label>
+            <input type="text" id="cardType" name="cardType" maxlength="30" placeholder="Double click here" />
+          </div>
+          <div class="field">
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" />
+          </div>
+          <div class="field">
+            <label for="expMonth">Expiration month</label>
+            <input type="text" id="expMonth" name="expMonth" maxlength="2" />
+          </div>
+          <div class="field">
+            <label for="expYear">Expiration year</label>
+            <input type="text" id="expYear" name="expYear" maxlength="4" />
+          </div>
+        </fieldset>
+      </div>
     </form>
   </body>
 </html>
