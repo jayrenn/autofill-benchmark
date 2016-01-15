@@ -3,14 +3,13 @@ var firstNameSettings = [
   { name: "fname" }
 ];
 
-function createFieldInputText(settings, stub) {
+function createFieldInput(settings, stub, type) {
   var field = document.createElement("div");
   field.className = "field";
   var label = document.createElement("label");
-  label.innerText = "Test";
   var input = document.createElement("input");
-  input.type = "text";
-
+  input.type = type;
+  var spacer = document.createTextNode("\n");
   var settingsKeys = Object.keys(settings);
 
   for (var i = 0; i < settingsKeys.length; i++) {
@@ -19,6 +18,7 @@ function createFieldInputText(settings, stub) {
   }
 
   field.appendChild(label);
+  field.appendChild(spacer);
   field.appendChild(input);
 
   stub.parentNode.insertBefore(field, stub);
@@ -30,7 +30,7 @@ function init() {
 	// First name permutations
 	stub = document.getElementById("firstNamePermutations");
   for (var i = 0; i < firstNameSettings.length; i++) {
-    createFieldInputText(firstNameSettings[i], stub);
+    createFieldInput(firstNameSettings[i], stub, "text");
   }
 }
 
