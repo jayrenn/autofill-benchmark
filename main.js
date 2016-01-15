@@ -5,10 +5,17 @@ var baselineContactSettings = [
   { id: "addressLine1", name: "addressLine1" },
   { id: "addressLine2", name: "addressLine2" },
   { id: "city", name: "city" },
-  { id: "state", name: "city" },
+  { id: "state", name: "state" },
   { id: "zipCode", name: "zipCode" },
   { id: "phone", name: "phone" },
   { id: "email", name: "email" }
+];
+
+var baselinePaymentSettings = [
+  { id: "cardNumber", name: "cardNumber", placeholder: "Double click here" },
+  { id: "cardType", name: "cardType" },
+  { id: "expMonth", name: "expMonth" },
+  { id: "expYear", name: "expYear" }
 ];
 
 var firstNameSettings = [
@@ -27,10 +34,16 @@ function createFieldInput(settings, stub, type) {
     var key = settingsKeys[i];
     input[key] = settings[key];
   }
-  
+
   field.appendChild(input);
 
   stub.parentNode.insertBefore(field, stub);
+}
+
+function generateFields(settings, stub) {
+  for (var i = 0; i < settings.length; i++) {
+    createFieldInput(settings[i], stub);
+  }
 }
 
 function init() {
@@ -38,15 +51,15 @@ function init() {
 
   // Baseline for contact information
   stub = document.getElementById("baselineContact");
-  for (var i = 0; i < baselineContactSettings.length; i++) {
-    createFieldInput(baselineContactSettings[i], stub);
-  }
+  generateFields(baselineContactSettings, stub);
+
+  // Baseline for payment information
+  stub = document.getElementById("baselinePayment");
+  generateFields(baselinePaymentSettings, stub);
 
 	// First name permutations
 	stub = document.getElementById("firstNamePermutations");
-  for (var i = 0; i < firstNameSettings.length; i++) {
-    createFieldInput(firstNameSettings[i], stub);
-  }
+  generateFields(firstNameSettings, stub);
 }
 
 document.addEventListener("DOMContentLoaded", init);
