@@ -1,3 +1,5 @@
+// Baseline settings
+
 var baselineContactSettings = [
   { id: "firstName", name: "firstName", placeholder: "Double click here" },
   { id: "middleName", name: "middleName" },
@@ -19,6 +21,8 @@ var baselinePaymentSettings = [
   { id: "expYear", name: "expYear" }
 ];
 
+// Contact settings
+
 var firstNameSettings = [
   { id: "first-name", placeholder: "Double click here" },
   { id: "city_", name: "first-name" },
@@ -26,9 +30,35 @@ var firstNameSettings = [
   { name: "fname" }
 ];
 
+var emailSettings = [
+  { name: "email-address" },
+  { name: "emailAddress" }
+];
+
+// Payment settings
+
 var nameOnCardSettings = [
-  { id: "name-on-card" },
-  { name: "card-name" }
+  { name: "card-name", placeholder: "Double click here" }
+];
+
+var expMonthSettings = [
+  { name: "credit-card-month" },
+  { name: "expiryMonth" }
+];
+
+var expYearSettings = [
+  { name: "credit-card-year" },
+  { name: "expiryYear" }
+];
+
+var settingsList = [
+  { settings: baselineContactSettings, stub: "baselineContact" },
+  { settings: baselinePaymentSettings, stub: "baselinePayment" },
+  { settings: firstNameSettings, stub: "firstNamePermutations" },
+  { settings: emailSettings, stub: "emailPermutations" },
+  { settings: nameOnCardSettings, stub: "nameOnCardPermutations" },
+  { settings: expMonthSettings, stub: "expMonthPermutations" },
+  { settings: expYearSettings, stub: "expYearPermutations" }
 ];
 
 function createFieldInput(settings, stub, type) {
@@ -55,17 +85,14 @@ function generateFields(settings, stub) {
   }
 }
 
+function bulkGenerate(list) {
+  for (var i = 0; i < list.length; i++) {
+    generateFields(list[i].settings, list[i].stub);
+  }
+}
+
 function init() {
-	var stub;
-
-  // Baseline for contact information
-  generateFields(baselineContactSettings, "baselineContact");
-
-  // Baseline for payment information
-  generateFields(baselinePaymentSettings, "baselinePayment");
-
-	// First name permutations
-  generateFields(firstNameSettings, "firstNamePermutations");
+  bulkGenerate(settingsList);
 }
 
 document.addEventListener("DOMContentLoaded", init);
