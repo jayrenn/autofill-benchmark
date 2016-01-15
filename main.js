@@ -19,6 +19,7 @@ var baselinePaymentSettings = [
 ];
 
 var firstNameSettings = [
+  { name: "firstName", placeholder: "Double click here" },
   { id: "first-name" },
   { name: "fname" }
 ];
@@ -41,6 +42,7 @@ function createFieldInput(settings, stub, type) {
 }
 
 function generateFields(settings, stub) {
+  stub = document.getElementById(stub);
   for (var i = 0; i < settings.length; i++) {
     createFieldInput(settings[i], stub);
   }
@@ -50,16 +52,13 @@ function init() {
 	var stub;
 
   // Baseline for contact information
-  stub = document.getElementById("baselineContact");
-  generateFields(baselineContactSettings, stub);
+  generateFields(baselineContactSettings, "baselineContact");
 
   // Baseline for payment information
-  stub = document.getElementById("baselinePayment");
-  generateFields(baselinePaymentSettings, stub);
+  generateFields(baselinePaymentSettings, "baselinePayment");
 
 	// First name permutations
-	stub = document.getElementById("firstNamePermutations");
-  generateFields(firstNameSettings, stub);
+  generateFields(firstNameSettings, "firstNamePermutations");
 }
 
 document.addEventListener("DOMContentLoaded", init);
