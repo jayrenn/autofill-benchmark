@@ -12,7 +12,7 @@ var baselineContactSettings = [
 ];
 
 var baselinePaymentSettings = [
-  { id: "nameOnCard", name: "nameOnCard", placeholder: "Double click here" },
+  { id: "cardName", name: "cardName", placeholder: "Double click here" },
   { id: "cardNumber", name: "cardNumber" },
   { id: "cardType", name: "cardType" },
   { id: "expMonth", name: "expMonth" },
