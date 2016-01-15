@@ -26,7 +26,7 @@ fieldset {
   border-bottom: 1px solid #ccc;
   margin: 40px 10px;
   padding: 40px 20px 15px 20px;
-  width: 444px;
+  width: 320px;
 }
 
 legend {
@@ -42,13 +42,7 @@ legend {
   margin: 5px 0;
 }
 
-.field label {
-  display: inline-block;
-  width: 120px;
-}
-
-.field input[type=text],
-.field select {
+.field input {
   padding: 10px;
   border: 0;
   background: #ecf0f1;
