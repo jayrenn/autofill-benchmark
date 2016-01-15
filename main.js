@@ -12,16 +12,21 @@ var baselineContactSettings = [
 ];
 
 var baselinePaymentSettings = [
-  { id: "cardNumber", name: "cardNumber", placeholder: "Double click here" },
+  { id: "nameOnCard", name: "nameOnCard", placeholder: "Double click here" },
+  { id: "cardNumber", name: "cardNumber" },
   { id: "cardType", name: "cardType" },
   { id: "expMonth", name: "expMonth" },
   { id: "expYear", name: "expYear" }
 ];
 
 var firstNameSettings = [
-  { name: "firstName", placeholder: "Double click here" },
-  { id: "first-name" },
+  { id: "first-name", placeholder: "Double click here" },
   { name: "fname" }
+];
+
+var nameOnCardSettings = [
+  { id: "name-on-card" },
+  { name: "card-name" }
 ];
 
 function createFieldInput(settings, stub, type) {
