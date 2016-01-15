@@ -21,7 +21,7 @@ var baselinePaymentSettings = [
 
 var firstNameSettings = [
   { id: "first-name", placeholder: "Double click here" },
-  { id: "city", name: "first-name" }
+  { id: "city", name: "first-name" },
   { name: "fname" }
 ];
 
