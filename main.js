@@ -25,11 +25,11 @@ var firstNameSettings = [
 ];
 
 function createFieldInput(settings, stub, type) {
+  var settingsKeys = Object.keys(settings);
   var field = document.createElement("div");
-  field.className = "field";
+  field.className = settingsKeys.indexOf("placeholder") != -1 ? "field placeholder" : "field";
   var input = document.createElement("input");
   input.type = type || "text";
-  var settingsKeys = Object.keys(settings);
 
   for (var i = 0; i < settingsKeys.length; i++) {
     var key = settingsKeys[i];
