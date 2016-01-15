@@ -12,8 +12,9 @@
     <h1>Autofill benchmark</h1>
     <form id="benchmark">
       <div class="column">
-        <fieldset id="baselineContact">
+        <fieldset>
           <legend>Baseline for contact information</legend>
+          <div id"baselineContact"></div>
           <div class="field">
             <label for="firstName">First name</label>
             <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Double click here" />
@@ -38,6 +39,7 @@
             <label for="city">City</label>
             <input type="text" id="city" name="city" maxlength="25" />
           </div>
+          <!--
           <div class="field">
             <label for="state">State</label>
             <select id="state" name="state">
@@ -106,6 +108,11 @@
               <option value="WY">WY</option>
             </select>
           </div>
+        -->
+          <div class="field">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" />
+          </div>
           <div class="field">
             <label for="zipCode">Zip code</label>
             <input type="text" id="zipCode" name="zipCode" maxlength="5" />
@@ -119,8 +126,9 @@
             <input type="text" id="email" name="email" maxlength="75" />
           </div>
         </fieldset>
-        <fieldset id="baselinePayment">
+        <fieldset>
           <legend>Baseline for payment information</legend>
+          <div id="baselinePayment"></div>
           <div class="field">
             <label for="cardNumber">Card number</label>
             <input type="text" id="cardNumber" name="cardNumber" maxlength="20" placeholder="Double click here" />
@@ -140,7 +148,7 @@
         </fieldset>
       </div>
       <div class="column">
-        <fieldset id="permutations">
+        <fieldset>
           <legend>Permutations</legend>
 
           <!-- Contact fields -->
